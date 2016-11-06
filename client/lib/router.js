@@ -3,12 +3,19 @@ import {BlazeLayout} from "meteor/kadira:blaze-layout";
 
 FlowRouter.route('/', {
   action: function() {
-    BlazeLayout.render("MainLayout", {content: "mainContent"});
+    BlazeLayout.render("MainLayout", {content: "main"});
   }
 });
+//
+// $("h2").click(function(){
+//   alert("yolo");
+//   FlowRouter.route('/result', {
+//     action: function() {
+//       BlazeLayout.render("MainLayout", {content: "result"});
+//     }
+//   });
+// });
 
-FlowRouter.route('/test', {
-  action: function() {
-    BlazeLayout.render("MainLayout", {content: "testContent"});
-  }
-});
+$("h2").click(function(){
+  alert("yolo");
+  });
