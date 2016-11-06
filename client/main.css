@@ -1,0 +1,15 @@
+/* CSS declarations go here */
+
+body{
+  min-width: 320px;
+  text-align: center;
+}
+
+.loginInfo {
+  display: inline;
+  text-align: left;
+}
+
+h2{
+    line-height: 1.5;
+}

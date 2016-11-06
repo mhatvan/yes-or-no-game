@@ -1,0 +1,78 @@
+<template name="MainLayout">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Yes or No Game</title>
+
+</head>
+
+<body>
+{{>Template.dynamic template=content}}
+</body>
+
+</template>
+
+<template name="mainContent">
+
+  <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="col-sm-6">
+                <h1>Yes or No Game </h1>
+            </div>
+            <div class="col-sm-6">
+                <h1>{{> loginButtons}} </h1>
+            </div>
+        </div>
+    </nav>
+    <div class="jumbotron">
+        <div class="container">
+
+            {{> info}}
+
+            <ul>
+                {{#each questions}}{{> game}}{{/each}}
+                <!-- {{> game}} -->
+            </ul>
+
+        </div>
+    </div>
+
+</template>
+
+<template name="info">
+
+  {{#if currentUser}}
+  <p class="alert alert-success loginInfo"> Hey {{loggedUser}} {{currentUser.username}} {{currentUser.emails}} you are logged in! </p>
+        {{else}}
+  <p class="alert alert-warning loginInfo"> Please login first!</p>
+        {{/if}}
+  <br>
+  <br>
+
+  <h2> Think you are a badass? <br> Can you answer all ten questions with "Yes"? </h2>
+
+  <br>
+
+  <button class="startQuestions btn btn-success"> Start the questions! </button>
+
+  <button class="resetDB btn btn-danger"> Remove all questions!! </button>
+
+</template>
+
+<template name="game">
+
+  <h1> Question {{questionCounter}}</h1>
+
+  <h3>{{question}} </h3>
+  <br>
+  <button class="btn btn-success">{{answerA}} </button>
+  <button class="btn btn-danger">{{answerB}} </button>
+
+ </template>
+
+<template name="testContent">
+   <h1> test teste testeste</h1>
+ </template>
